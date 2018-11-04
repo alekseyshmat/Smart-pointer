@@ -8,8 +8,8 @@
 
 using namespace std;
 
-namespace my_experimental
-{
+
+
 	struct ref_count_data{
 		unsigned int use_count;
 	};
@@ -85,6 +85,7 @@ namespace my_experimental
 			}
 		}
 
+	
 		T& operator* () const{
 			return *pdata;
 		}
@@ -114,6 +115,6 @@ namespace my_experimental
 	template <class T, class U> shared_pointer<T> dynamic_pointer_cast(const shared_pointer<U>& sp){
 		return shared_pointer<T>(dynamic_cast<T*>(sp.pdata), sp.rc);
 	}
-}
+
 
 #endif
