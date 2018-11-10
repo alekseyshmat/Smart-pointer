@@ -1,3 +1,4 @@
 ﻿  Lab2.cpp
-f:\s t u d y\ос\лаб2\lab2\lab2\lab2.cpp(77): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+f:\s t u d y\ос\лаб2\lab2\lab2\lab2.cpp(72): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+f:\s t u d y\ос\лаб2\lab2\lab2\lab2.cpp(114): warning C4101: dwBytesWritten: неиспользованная локальная переменная
   Lab2.vcxproj -> F:\S T U D Y\ОС\ЛАБ2\Lab2\Debug\Lab2.exe

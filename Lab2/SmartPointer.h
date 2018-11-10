@@ -4,7 +4,8 @@
 #define SMART_POINTER_HEADER
 
 #include <cstddef>
-#include <mutex>
+#include <Windows.h>
+//#include <mutex>
 
 using namespace std;
 
@@ -18,36 +19,43 @@ namespace SmartPointer
 	{
 	private:
 		ref_count_data ref_counts;
-		mutable mutex ref_count_mutex;
+		mutable CRITICAL_SECTION  critical_section;
 
 	public:
 		reference_count()
 		{
 			ref_counts.use_count = 1;
+			InitializeCriticalSection(&critical_section);
 		}
 
 		void* get_shared_ref(void* pdata)
 		{
-			lock_guard<mutex> lock(ref_count_mutex);
+			EnterCriticalSection(&critical_section);
 
 			if (ref_counts.use_count) {
 				ref_counts.use_count++;
+				LeaveCriticalSection(&critical_section);
 				return pdata;
 			}
 			else {
+				LeaveCriticalSection(&critical_section);
 				return NULL;
 			}
 		}
 
 		ref_count_data release_shared_ref() {
-			lock_guard<mutex> lock(ref_count_mutex);
+			EnterCriticalSection(&critical_section);
+			//DeleteCriticalSection(&critical_section);
+
 			ref_counts.use_count--;
+			LeaveCriticalSection(&critical_section);
 			return ref_counts;
 		}
 
 		unsigned int get_use_count() const
 		{
-			lock_guard<mutex> lock(ref_count_mutex);
+			//lock_guard<mutex> lock(ref_count_mutex);
+
 			return ref_counts.use_count;
 		}
 	};
@@ -56,11 +64,11 @@ namespace SmartPointer
 	class SafeSmartPointer
 	{
 	private:
-		T * pdata;            // pointer
-		reference_count* rc; // Reference count
+		T * pdata;            
+		reference_count* rc; 
 
 	public:
-		SafeSmartPointer() : pdata(NULL), rc(NULL) {} //default constructor
+		SafeSmartPointer() : pdata(NULL), rc(NULL) {} 
 
 		SafeSmartPointer(T* pvalue) : pdata(pvalue), rc(NULL) {
 			if (NULL != pdata) {
@@ -68,7 +76,6 @@ namespace SmartPointer
 			}
 		}
 
-		//Copy constructor
 		SafeSmartPointer(const SafeSmartPointer<T>& sp) : pdata(NULL), rc(sp.rc) {
 			if (NULL != rc) {
 				pdata = static_cast<T*>(rc->get_shared_ref(sp.pdata));
