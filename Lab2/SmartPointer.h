@@ -1,11 +1,4 @@
-#pragma once
-
-#ifndef SMART_POINTER_HEADER
-#define SMART_POINTER_HEADER
-
-#include <cstddef>
 #include <Windows.h>
-//#include <mutex>
 
 using namespace std;
 
@@ -45,18 +38,12 @@ namespace SmartPointer
 
 		ref_count_data release_shared_ref() {
 			EnterCriticalSection(&critical_section);
-			//DeleteCriticalSection(&critical_section);
+			
 
 			ref_counts.use_count--;
 			LeaveCriticalSection(&critical_section);
+			//DeleteCriticalSection(&critical_section);
 			return ref_counts;
-		}
-
-		unsigned int get_use_count() const
-		{
-			//lock_guard<mutex> lock(ref_count_mutex);
-
-			return ref_counts.use_count;
 		}
 	};
 
@@ -107,4 +94,3 @@ namespace SmartPointer
 
 	};
 }
-#endif
