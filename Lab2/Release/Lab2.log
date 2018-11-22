@@ -1,0 +1,8 @@
+﻿  Lab2.cpp
+Lab2.cpp(53): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  Создание кода
+  11 of 131 functions ( 8.4%) were compiled, the rest were copied from previous compilation.
+    8 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  Lab2.vcxproj -> F:\S T U D Y\ОС\ЛАБ2\Lab2\Release\Lab2.exe
