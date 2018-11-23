@@ -1,20 +1,20 @@
-15:16:2:541 [INFO] Data is calculate:  x =  0, y = 0
-15:16:2:542 [INFO] Data is written to file:  x =  0, y = 0
-15:16:2:543 [INFO] Start time counting x = 0 y = 0 : 15:16:2:541
-15:16:2:543 [INFO] End time 15:16:2:542
-15:16:2:553 [INFO] Data is written to file:  x =  0, y = 0
-15:16:2:553 [INFO] Data is calculate:  x =  1, y = 1
-15:16:2:559 [INFO] Start time counting x = 1 y = 1 : 15:16:2:553
-15:16:2:559 [INFO] End time 15:16:2:553
-15:16:2:564 [INFO] Data is calculate:  x =  2, y = 4
-15:16:2:564 [INFO] Data is written to file:  x =  1, y = 1
-15:16:2:581 [INFO] Data is written to file:  x =  2, y = 4
-15:16:2:581 [INFO] Data is calculate:  x =  3, y = 9
-15:16:2:592 [INFO] Data is written to file:  x =  3, y = 9
-15:16:2:592 [INFO] Data is calculate:  x =  4, y = 16
-15:16:2:592 [INFO] Start time counting x = 3 y = 9 : 15:16:2:592
-15:16:2:592 [INFO] End time 15:16:2:592
-15:16:2:615 [INFO] Start time counting x = 4 y = 16 : 15:16:2:592
-15:16:2:615 [INFO] End time 15:16:2:592
-15:16:2:628 [INFO] Start time counting x = 4 y = 16 : 15:16:2:592
-15:16:2:628 [INFO] End time 15:16:2:592
+15:46:16:910 [INFO] Data is calculate:  x =  0, y = 0
+15:46:16:968 [INFO] Data is written to file:  x =  0, y = 0
+15:46:16:978 [INFO] Start time counting x = 0 y = 0 : 15:46:16:910
+15:46:16:978 [INFO] End time 15:46:16:968
+15:46:16:978 [INFO] Data is calculate:  x =  1, y = 1
+15:46:17:31 [INFO] Data is written to file:  x =  1, y = 1
+15:46:17:41 [INFO] Start time counting x = 1 y = 1 : 15:46:16:978
+15:46:17:41 [INFO] End time 15:46:17:31
+15:46:17:41 [INFO] Data is calculate:  x =  2, y = 4
+15:46:17:94 [INFO] Data is written to file:  x =  2, y = 4
+15:46:17:104 [INFO] Start time counting x = 2 y = 4 : 15:46:17:41
+15:46:17:104 [INFO] End time 15:46:17:94
+15:46:17:104 [INFO] Data is calculate:  x =  3, y = 9
+15:46:17:157 [INFO] Data is written to file:  x =  3, y = 9
+15:46:17:167 [INFO] Start time counting x = 3 y = 9 : 15:46:17:104
+15:46:17:167 [INFO] End time 15:46:17:157
+15:46:17:167 [INFO] Data is calculate:  x =  4, y = 16
+15:46:17:220 [INFO] Data is written to file:  x =  4, y = 16
+15:46:17:231 [INFO] Start time counting x = 4 y = 16 : 15:46:17:167
+15:46:17:231 [INFO] End time 15:46:17:220

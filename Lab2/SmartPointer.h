@@ -17,6 +17,7 @@ namespace SmartPointer
 
 			if (numberOfReferences == 0) {
 				numberOfReferences++;
+				Sleep(10);
 				ReleaseMutex(mutex);
 				return data;
 			}
@@ -42,10 +43,10 @@ namespace SmartPointer
 			WaitForSingleObject(mutex, INFINITE);
 
 			if (numberOfReferences == 1) {
+				Sleep(10);
 				ReleaseMutex(mutex);
 				return *data;
 			}
-
 			ReleaseMutex(mutex);
 			return NULL;
 		}
@@ -54,10 +55,10 @@ namespace SmartPointer
 			WaitForSingleObject(mutex, INFINITE);
 
 			if (numberOfReferences == 1) {
+				Sleep(10);
 				ReleaseMutex(mutex);
 				return data;
 			}
-
 			ReleaseMutex(mutex);
 			return NULL;
 		}
